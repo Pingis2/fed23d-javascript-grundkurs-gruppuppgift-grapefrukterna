@@ -1,0 +1,396 @@
+// section width filling whole screen width for mobile view
+@media screen and (max-width: 620px) {
+  section {
+    width: 90vw;
+  }
+  .themeToggleContainer {
+    width: 90vw;
+  }
+}
+
+// section width fixed to 480px on desktop
+@media screen and (min-width: 620px) {
+  section {
+    width: 480px;
+  }
+  .themeToggleContainer {
+    width: 480px;
+  }
+  // Button for toggling light and dark themes moved outside the main section in desktop mode
+  .themeToggleBtn {
+    position: relative;
+    right: -80px;
+  }
+  // The start page a bit smaller on desktop to fix design problem in Google Chrome
+  .startPage {
+    width: 440px;
+  }
+}
+
+// dark theme color styles
+.darkTheme {
+  color: $dark-theme-text-color;
+  background-color: $dark-background-color;
+
+  .questionAltContainer {
+    border: $dark-theme-border-color 2px solid;
+    box-shadow: 0px 0px 0px 2px $dark-theme-border-color inset;
+  }
+  .resultsItem {
+    border-left: 2px $dark-theme-border-color solid;
+    border-right: 2px $dark-theme-border-color solid;
+  }
+
+  .resultsMessage {
+    border: 2px $dark-theme-border-color solid;
+  }
+
+  .themeToggleBtn {
+    border-left: 2px $dark-theme-border-color solid;
+    border-right: 2px $dark-theme-border-color solid;
+    border-bottom: 2px $dark-theme-border-color solid;
+    border-top: none;
+    background-color: $light-background-color;
+    color: $light-theme-text-color;
+    svg {
+      path {
+        fill: $light-theme-text-color;
+      }
+     }
+  }
+}
+
+// light theme color styles
+.lightTheme {
+  color: $light-theme-text-color;
+  background-color: $light-background-color;
+
+  .startPage {
+  
+    .startQuiz {
+      border: 5px outset $light-theme-border-color;
+      background-color: $light-background-color;
+      color: $light-theme-text-color;
+    }
+  }
+  
+
+  .resultsMessage {
+    border: 2px $light-theme-border-color solid;
+  }
+
+  .resultsItem {
+    border-left: 2px $light-theme-border-color solid;
+    border-right: 2px $light-theme-border-color solid;
+  }
+
+  .questionPage {
+
+    .questions {
+
+      .questionAltContainer {
+        border: $light-theme-border-color 2px solid;
+        box-shadow: 0px 0px 0px 2px $light-theme-border-color inset;
+      }
+    
+      .questionAltContainer:focus-within {
+        box-shadow: 0px 0px 0px 2px rgb(247, 255, 100) inset;
+      }
+
+      /* Circle */
+      .questionAltContainer input:before {
+        border: 2px solid $light-theme-border-color;
+        background: $light-background-color;
+      }
+      
+      /* Circle dot */
+      .questionAltContainer input:after {
+        background: $light-theme-border-color;
+      }
+    }
+
+    .nextQuestionBtn {
+
+      button {
+        border: 7px outset $light-theme-border-color;
+        background-color: $light-background-color;
+        color: $light-theme-text-color;
+      }
+    }
+  }
+
+  
+
+  .themeToggleBtn {
+    border-left: 2px $light-theme-border-color solid;
+    border-right: 2px $light-theme-border-color solid;
+    border-bottom: 2px $light-theme-border-color solid;
+    border-top: none;
+    background-color: $dark-background-color;
+    color: $dark-theme-text-color;
+
+    svg {
+      path {
+        fill: $dark-theme-text-color;
+      }
+     }
+  }
+}
+
+body {
+  display: grid;
+  grid-template-rows: 40px calc(100vh - 80px) 40px;
+  justify-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: $main-font;
+}
+
+// Button for toggling light and dark themes
+
+.themeToggleContainer {
+  grid-row: 1;
+  z-index: 10;
+
+}
+.themeToggleBtn {
+  cursor: pointer;
+  font-size: 1.5rem;
+  height: 40px;
+  min-width: 80px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: auto 0 auto auto;
+  
+
+  svg {
+    display: inline;
+    margin: auto;
+  }
+ 
+}
+
+
+section {
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  height: calc(100vh - 80px);
+  margin: 0;
+  
+}
+
+// styling for start page -------------------------------------------------------------------
+
+.startPage {
+  
+  h1 {
+    text-align: center;
+    font-family: $main-font;
+  }
+
+  .startPageImage {
+    width: 100%;
+    height: auto;
+    margin: 0 auto 0 auto;
+  }
+
+  .startQuiz {
+    cursor: pointer;
+    height: 50px;
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+    border: 5px outset $dark-theme-border-color;
+    background-color: $dark-background-color;
+    color: $dark-theme-text-color;
+  }
+}
+
+// styling for the question page ----------------------------------------------------------
+.questionPage {
+  
+  /* Question text with a set height so the alternatives doesn't jump around 
+  depending on the length of the question */
+  .qstnAndTime {
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+
+    img {
+      width: auto;
+      height: 20px;
+      margin: 0 5% 0 5%;
+    }
+  }
+
+  .questionText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: $main-font;
+    text-align: center;
+    font-size: 1.2rem;
+    height: 25%;
+  }
+
+  .questions {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .questionAltContainer {
+      cursor: pointer;
+      display: flex;
+
+      label {
+        width: 100%;
+        cursor: pointer;
+        padding: 7px 7px 9px 0px;
+        margin-left: 25px;
+      }
+      
+    }
+
+    .questionAltContainer:focus-within {
+      box-shadow: 0px 0px 0px 2px rgb(8, 0, 255) inset;
+    }
+
+    // radio button styling
+    .questionAltContainer input {
+      display: inline-block;
+      position: relative;
+      margin-left: 10px;
+      -webkit-appearance: none;
+      -webkit-backface-visibility: hidden;
+    }
+    
+    /* Circle */
+    .questionAltContainer input:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 45%;
+      left: 0;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      margin-right: 5px;
+      width: 1em;
+      height: 1em;
+      border: 2px solid $dark-theme-border-color;
+      background: $dark-background-color;
+    }
+    
+    /* Circle dot */
+    .questionAltContainer input:after {
+      content: '';
+      display: block;
+      width: 0.65em;
+      height: 0.65em;
+      background: $dark-theme-border-color;
+      position: absolute;
+      border-radius: 50%;
+      top: 32%;
+      left: 50%;
+      transform: scale(0, 0);
+      opacity: 0;
+      transform-origin: center;
+      transition: all 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53);
+      margin-left: 0.33em;
+    }
+
+    .questionAltContainer input:checked:after {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Additional styling for Safari */
+    @media not all and (min-resolution:.001dpcm) { @supports (-webkit-appearance:none) {
+      .questionAltContainer input:checked:after {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }}
+  }
+
+
+  .nextQuestionBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    button {
+      cursor: pointer;
+      height: 60px;
+      width: 100%;
+      font-size: 1.5rem;
+      border: 7px outset $dark-theme-border-color;
+      background-color: $dark-background-color;
+      color: $dark-theme-text-color;
+      transition: 0.1s;
+    }
+
+    button:active {
+      transform: translateY(2px);
+    }
+  }
+
+}
+
+// styling for results page ---------------------------------------------------------------
+
+.results {
+  grid-row: 2;
+  font-family: $main-font;
+  transform: translate(0, 0);
+  display: flex;
+  height: calc(100vh - 130px);
+  gap: 10px;
+
+  .resultsMessage {
+    background-color: $dark-background-color;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    p {
+      text-align: center;
+      font-size: 2rem;
+      margin: 5px;
+    }
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin: 0 0 10px 0;
+  }
+
+  .resultsItem {
+    text-align: center;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    padding: 1rem 0;
+    height: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 0 auto;
+  }
+
+  .playAgain {
+    cursor: pointer;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.5rem;
+    border: 2px solid $dark-theme-border-color;
+    background-color: $dark-background-color;
+    color: $dark-theme-text-color;
+  }
+}

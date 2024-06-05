@@ -1,0 +1,93 @@
+body.lightTheme.norwayResult {
+    background-image: linear-gradient(
+      to bottom,
+      $light-background-color-transparent,
+      $light-background-color-transparent
+    ),url('../../src/assets/images/results-norway.webp');
+    background-size: cover;
+    background-position: center;
+    color: $norwegian-red;
+
+     .resultsItem {
+        background-color: #FFFFFF80;
+        border: 2px $norwegian-red solid;
+    }
+
+    .resultsMessage {
+      background-color: #FFFFFF80;
+      border: 2px $norwegian-red solid;
+    }
+
+    .playAgain {
+      border: 2px solid $norwegian-red;
+      background-color: white;
+      color: $norwegian-red;
+    }
+  
+}
+body.darkTheme.norwayResult {
+    background-image: linear-gradient(
+      to bottom,
+      $dark-background-color-transparent,
+      $dark-background-color-transparent
+    ),url('../../src/assets/images/results-norway.webp');
+    background-size: cover;
+    color: white;
+    background-position: center;
+
+    .resultsItem {
+        background-color: $norwegian-red-transparent;
+        border: 2px white solid;
+    }
+
+    .resultsMessage {
+      background-color: $norwegian-red-transparent;
+      border: 2px white solid;
+    }
+
+    .playAgain {
+      border: 2px solid white;
+      background-color: $norwegian-red;
+      color: white;
+    }
+}
+body.lightTheme.swedenResult {
+    background-image: linear-gradient(
+      to bottom,
+      $light-background-color-transparent,
+      $light-background-color-transparent
+    ),url('../../src/assets/images/results-sweden.webp');
+    background-size: cover;
+    background-position: center;
+
+    .resultsItem {
+        background-color: $light-background-color-transparent;
+    }
+
+    .resultsMessage {
+      background-color: $light-background-color-transparent;
+    }
+
+    .playAgain {
+      border: 2px solid $light-theme-border-color;
+      background-color: $light-background-color;
+      color: $light-theme-text-color;
+    }
+}
+body.darkTheme.swedenResult {
+    background-image: linear-gradient(
+      to bottom,
+      $dark-background-color-transparent,
+      $dark-background-color-transparent
+    ),url('../../src/assets/images/results-sweden.webp');
+    background-size: cover;
+    background-position: center;
+
+    .resultsItem {
+        background-color: $dark-background-color-transparent;
+    }
+
+    .resultsMessage {
+      background-color: $dark-background-color-transparent;
+    }
+}
